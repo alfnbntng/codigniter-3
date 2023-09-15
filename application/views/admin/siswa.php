@@ -107,24 +107,6 @@
         background: #d1a802;
       }
 
-      #sidebar ul li.active > a,
-      a[aria-expanded="true"] {
-        color: #fff;
-        background: #d1a802;
-      }
-
-      a[data-toggle="collapse"] {
-        position: relative;
-      }
-
-      .dropdown-toggle::after {
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-      }
-
       ul ul a {
         font-size: 0.9em !important;
         padding-left: 30px !important;
@@ -156,15 +138,6 @@
         padding: 20px;
         min-height: 100vh;
         transition: all 0.3s;
-      }
-
-      .card {
-        margin-bottom: 20px;
-        background-color: #1f1f1f;
-      }
-
-      .card-body {
-        text-align: center;
       }
 
       @media (max-width: 768px) {
@@ -215,14 +188,14 @@
             <a
               href="https://bootstrapious.com/p/bootstrap-sidebar"
               class="article"
-              >Back to article</a
+              >Logout</a
             >
           </li>
         </ul>
       </nav>
 
-    <!-- Page Content  -->
-    <div id="content" class="bg-dark">
+      <!-- Page Content  -->
+      <div id="content" class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
           <div class="container-fluid">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -238,59 +211,32 @@
           </div>
         </nav>
 
-
         <!-- content -->
         <div class="container">
-          <div class="row">
-               <!-- Card 1 -->
-               <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="card-header">Featured</div>
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" class="btn btn-outline-warning">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="card-header">Featured</div>
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" class="btn btn-outline-warning">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="card-header">Featured</div>
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" class="btn btn-outline-warning">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <!-- Tambahkan card lainnya di sini sesuai kebutuhan -->
-          </div>
-        </div>
-            <!-- Tambahkan card lainnya di sini sesuai kebutuhan -->
-          </div>
+            <a href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+            <table class="table table-dark table-hover">
+                <tr>
+                    <td>No</td>
+                    <td>Nama Siswa</td>
+                    <td>NISN</td>
+                    <td>Gender</td>
+                    <td>Kelas</td>
+                    <td>Action</td>
+                </tr>
+                <?php $no=0; foreach($siswa as $row): $no++ ?>
+                <tr>
+                    <td><?php echo $no ?></td>
+                    <td><?php echo $row->nama_siswa ?></td>
+                    <td><?php echo $row->nisn ?></td>
+                    <td><?php echo $row->gender ?></td>
+                    <td><?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
+                    <td>
+                        <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
+                        <a href="<?php echo base_url('admin/UPDATE_siswa'); ?>" class="btn btn-warning">Update</a>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </table>
         </div>
 
 
@@ -307,6 +253,13 @@
           $("#sidebar").toggleClass("active");
         });
       });
+
+      function hapus(id){
+        var yes = confirm('yakin di hapus?');
+        if(yes == true) {
+            window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+        }
+      }
     </script>
   </body>
 </html>
