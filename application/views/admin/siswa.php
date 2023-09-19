@@ -232,7 +232,7 @@
                     <td><?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
                     <td>
                         <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
-                        <a href="<?php echo base_url('admin/UPDATE_siswa'); ?>" class="btn btn-warning">Update</a>
+                        <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa ;?>" class="btn btn-warning">Update</a>
                     </td>
                 </tr>
                 <?php endforeach ?>
