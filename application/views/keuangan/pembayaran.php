@@ -17,44 +17,35 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      .img-thumbnail {
-        max-width: 100px; 
-        max-height: 100px; 
-      }
-    </style>
-
     </style>
   </head>
   <body>
-    <?php $this->load->view('sidebar');?>
+    <?php $this->load->view('sidebar_keuangan');?>
         <!-- content -->
       <div class="container">
-          <a href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+          <a href="<?php echo base_url('keuangan/tambah_pembayaran'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
           <table class="table table-dark table-hover">
                 <tr>
                     <td>No</td>
-                    <td>Foto</td>
                     <td>Nama Siswa</td>
                     <td>NISN</td>
-                    <td>Jenis Kelamin</td>
-                    <td>Kelas</td>
+                    <td>Jenis Pembayaran</td>
+                    <td>Total Pembayaran</td>
                     <td>Aksi</td>
                 </tr>
-                <?php $no=0; foreach($siswa as $row): $no++ ?>
+                <?php $no=1; foreach($pembayaran as $row):?>
                 <tr>
-                    <td><?php echo $no ?></td>
-                    <td><img class="img-thumbnail" src="<?php echo base_url('images/siswa/' . $row->foto); ?>"></td>
-                    <td><?php echo $row->nama_siswa ?></td>
-                    <td><?php echo $row->nisn ?></td>
-                    <td><?php echo $row->gender ?></td>
-                    <td><?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
+                    <td class="text-center"><?php echo $no ?></td>
+                    <td><?php echo nama_siswa($row->id_siswa)?></td>
+                    <td><?php echo nisn($row->id_siswa)?></td>
+                    <td><?php echo $row->jenis_pembayaran ;?></td>
+                    <td><?php echo $row->total_pembayaran ;?></td>
                     <td>
                         <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
                         <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa ;?>" class="btn btn-warning">Ubah</a>
                     </td>
                 </tr>
-                <?php endforeach ?>
+                <?php $no++; endforeach ?>
             </table>
         </div>
     <!-- tag </div> di bawah ini untuk membuat tampilan sesuai dengan yang di maksud -->

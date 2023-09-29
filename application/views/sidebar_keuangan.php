@@ -196,22 +196,10 @@
             <p class="btn-primary">Sistem Informasi Sekolah</p>
           </div>
           <li>
-            <a href="<?php echo base_url('admin/index'); ?>"><i class="fa-solid fa-house mx-2"></i> Rumah</a>
+            <a href="<?php echo base_url('keuangan/index'); ?>"><i class="fa-solid fa-house mx-2"></i> Rumah</a>
           </li>
           <li>
-            <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-graduation-cap mx-2"></i> Siswa</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-chalkboard-user mx-2"></i> Guru</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-book-open mx-2"></i> Mapel</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-shapes mx-2"></i> Kelas</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url('admin/akun'); ?>"><i class="fa-solid fa-user mx-2"></i> Akun</a>
+            <a href="<?php echo base_url('keuangan/pembayaran'); ?>"><i class="fa-solid fa-credit-card mx-2"></i> Pembayaran</a>
           </li>
         </ul>
 
