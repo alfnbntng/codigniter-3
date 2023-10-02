@@ -26,9 +26,14 @@
                     </select>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="jenis_pembayaran" class="form-label">Jenis Pembayaran</label>
-                    <input type="text" class="form-control" id="jenis_pembayaran" name="jenis_pembayaran">
-                </div>
+                <label for="jenis_pembayaran" class="form-label">Jenis Pembayaran</label>
+                <select name="jenis_pembayaran" class="form-select">
+                    <option selected>Pilih Jenis Pembayaran</option>
+                    <option value="Pembayaran SPP">Pembayaran SPP</option>
+                    <option value="Pembayaran Uang Gedung">Pembayaran Uang Gedung</option>
+                    <option value="Pembayaran Seragam">Pembayaran Seragam</option>
+                </select>
+            </div>
                 <div class="mb-3 col-12">
                     <label for="total_pembayaran" class="form-label">Total Pembayaran</label>
                     <input type="number" class="form-control" id="total_pembayaran" name="total_pembayaran">

@@ -1,4 +1,10 @@
 <?php
+    // convert format rupiah
+    function convRupiah($value)
+        {
+            return 'Rp. ' . number_format($value);
+        }
+
     function tampil_full_kelas_byid($id)
         {
             $ci=& get_instance();

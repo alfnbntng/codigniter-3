@@ -24,6 +24,7 @@
         <!-- content -->
       <div class="container">
           <a href="<?php echo base_url('keuangan/tambah_pembayaran'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+          <a href="<?php echo base_url('keuangan/export'); ?>" class="btn btn-outline-primary mb-2">Export</a>
           <table class="table table-dark table-hover">
                 <tr>
                     <td>No</td>
@@ -39,10 +40,10 @@
                     <td><?php echo nama_siswa($row->id_siswa)?></td>
                     <td><?php echo nisn($row->id_siswa)?></td>
                     <td><?php echo $row->jenis_pembayaran ;?></td>
-                    <td><?php echo $row->total_pembayaran ;?></td>
+                    <td><?php echo convRupiah($row->total_pembayaran); ?></td>
                     <td>
-                        <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
-                        <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa ;?>" class="btn btn-warning">Ubah</a>
+                        <button onclick="hapus(<?php echo $row->id ?>)" class="btn btn-danger">Hapus</button>
+                        <a href="<?php echo base_url('Keuangan/ubah_pembayaran/').$row->id?>" class="btn btn-warning">Ubah</a>
                     </td>
                 </tr>
                 <?php $no++; endforeach ?>
@@ -50,6 +51,14 @@
         </div>
     <!-- tag </div> di bawah ini untuk membuat tampilan sesuai dengan yang di maksud -->
     </div>
+    <script>
+      function hapus(id) {
+        var yes = confirm("Yakin mau dihapus?")
+        if(yes == true) {
+          window.location.href= "<?php echo base_url('keuangan/hapus_pembayaran/') ?>" + id;
+        }
+      }
+    </script>
   </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>

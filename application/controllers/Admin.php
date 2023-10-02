@@ -95,12 +95,6 @@ class Admin extends CI_Controller {
 			
 		}
 
-	// public function hapus_siswa($id)
-	// 	{
-	// 		$this->m_model->delete('siswa', 'id_siswa', $id);
-	// 		redirect(base_url('admin/siswa'));
-	// 	}
-
 	public function hapus_siswa($id)
 		{
 			$siswa = $this->m_model->get_by_id('siswa', 'id_siswa', $id)->row();
@@ -174,7 +168,7 @@ class Admin extends CI_Controller {
 				$email = $this->input->post('email');
 				$username = $this->input->post('username');
 				$data = [
-					 'foto' => 'User.png',
+					'foto' => 'User.png',
 					'email' => $email,
 					'username' => $username,
 				];

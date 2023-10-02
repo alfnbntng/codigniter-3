@@ -59,6 +59,16 @@
         </div>
     <!-- tag </div> di bawah ini untuk membuat tampilan sesuai dengan yang di maksud -->
     </div>
+    <script>
+    function hapus(id) {
+        var yes = confirm('Yakin Dex?');
+        if (yes == true) {
+            window.location.href = "<?php echo base_url(
+            'admin/hapus_siswa/'
+        ); ?>" + id;
+        }
+    }
+    </script>
   </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
