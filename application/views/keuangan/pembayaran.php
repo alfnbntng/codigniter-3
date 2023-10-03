@@ -25,6 +25,43 @@
       <div class="container">
           <a href="<?php echo base_url('keuangan/tambah_pembayaran'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
           <a href="<?php echo base_url('keuangan/export'); ?>" class="btn btn-outline-primary mb-2">Export</a>
+          <button type="button" class="btn btn-outline-warning mb-2" data-bs-toggle="modal" data-bs-target="#myModal">
+            Buka Modal
+        </button>
+
+        <!-- modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Form Contoh</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="text-center text-dark">Tambah File</h3>
+                        <!-- Form di dalam modal -->
+                        <form method="post" enctype="multipart/form-data" action="<?= base_url('keuangan/import')?>" class="text-dark">
+                          <div class="form-outline mb-4">
+                            <input type="email" id="form1Example1" class="form-control" placeholder="Email.." />
+                            <label class="form-label" for="form1Example1">Email address</label>
+                          </div>
+
+                          <div class="form-outline mb-4">
+                            <input type="file" name="file" id="form1Example2" class="form-control" placeholder="Tambah File.." />
+                            <input type="submit" name="import" id="form1Example2" class="form-control btn btn-primary" value="import" />
+                            <label class="form-label" for="form1Example2">Tambah File</label>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- tabel -->
           <table class="table table-dark table-hover">
                 <tr>
                     <td>No</td>
@@ -62,4 +99,5 @@
   </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </html>
