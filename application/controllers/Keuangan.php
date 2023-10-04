@@ -28,7 +28,7 @@ class Keuangan extends CI_Controller {
 			$this->load->view('keuangan/pembayaran',$data);
 		}
 
-	 public function export()
+	public function export()
     {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
