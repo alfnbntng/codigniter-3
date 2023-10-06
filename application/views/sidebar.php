@@ -202,7 +202,7 @@
             <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-graduation-cap mx-2"></i> Siswa</a>
           </li>
           <li>
-            <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-chalkboard-user mx-2"></i> Guru</a>
+            <a href="<?php echo base_url('admin/guru'); ?>"><i class="fa-solid fa-chalkboard-user mx-2"></i> Guru</a>
           </li>
           <li>
             <a href="<?php echo base_url('admin/siswa'); ?>"><i class="fa-solid fa-book-open mx-2"></i> Mapel</a>
